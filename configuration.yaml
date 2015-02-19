@@ -1,34 +1,35 @@
 ## YAML Template.
 ---
-groups :
-    - name : Group1
-      members :
-        - alice
-        - bob
-        - charlie
-    - name: Group2
-      members :
-        - daphnie
-        - charlie
-        - ccc
 configuration : 
     - name : alice
-      ip : 128.237.175.181
+      ip : 127.0.0.1
       port : 12344
+      memberOf :
+         - Group1
     - name : bob
-      ip : 128.237.175.181
+      ip : 127.0.0.1
       port : 14255
+      memberOf :
+         - Group1
+         - Group2
     - name : charlie
-      ip : 128.237.175.181
+      ip : 127.0.0.1
       port : 12998
+      memberOf :
+         - Group1
+         - Group2
     - name: daphnie
-      ip : 128.237.175.181
+      ip : 127.0.0.1
       port : 1985
+      memberOf :
+         - Group2
     - name : ccc
-      ip : 128.237.175.181
+      ip : 127.0.0.1
       port : 12362
+      memberOf :
+         - Group2
     - name : logger
-      ip : 128.237.175.181
+      ip : 127.0.0.1
       port : 1987
     
 sendRules : 
