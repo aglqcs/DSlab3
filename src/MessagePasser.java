@@ -172,18 +172,6 @@ public class MessagePasser {
 			/* need to clear the delay queue because we deliver a non-delayed message*/
 			Listener.clear_delay_queue();
 			Message get = p.get_recv_queue().poll();
-			if( get instanceof TimeStampedMessage){
-				/* modify here, all muticast message will use same timestamp*/
-				if(get.get_kind().compareToIgnoreCase("mul") == 0){
-					get_clock().UpdateTimeStamp(((TimeStampedMessage) get).get_mul_timestamp());
-				}
-				else{
-					get_clock().UpdateTimeStamp(((TimeStampedMessage) get).get_timestamp());
-				}
-				if(get.get_group().compareToIgnoreCase("ALL") != 0){
-					get_clock().getTimeStamp().print_clock();
-				}
-			}
 			return get;
 		}
 	}
